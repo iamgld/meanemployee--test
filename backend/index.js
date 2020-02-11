@@ -20,7 +20,7 @@ app.set('port', process.env.PORT || port)
 
 // Middlerwares
 // ? Mensajes en consola
-app.use(morgan('dev'))
+// app.use(morgan('dev'))
 // ? Configuramos express para que entienda respuestas en formato json
 app.use(cors({origin: portAngular}))
 app.use(express.json())
@@ -31,7 +31,7 @@ app.use('/api/employees', employees)
 app.use('/api/payment', payment)
 
 // Static files
-// app.use(express.static(path.join(__dirname, '../frontend/dist/frontend')))
+app.use(express.static(path.join(__dirname, '../frontend/dist/frontend')))
 // app.get('/', (req, res) => res.send('Hello World!'))
 
 // Starting the server
