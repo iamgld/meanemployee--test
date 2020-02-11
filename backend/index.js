@@ -31,7 +31,7 @@ app.use('/api/employees', employees)
 app.use('/api/payment', payment)
 
 // Static files
-// app.use(express.static(path.join(__dirname, '../frontend/dist/frontend')))
+app.use(express.static(path.join(__dirname, '../frontend/dist/frontend')))
 // app.get('/', (req, res) => res.send('Hello World!'))
 
 // Starting the server
