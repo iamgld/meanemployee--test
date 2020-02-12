@@ -5,7 +5,7 @@ const port = 3000
 const portAngular = 'http://localhost:4200'
 
 // Middlerwares imports
-const morgan = require('morgan')
+// const morgan = require('morgan')
 const cors = require('cors')
 const { mongoose } = require('./database')
 
