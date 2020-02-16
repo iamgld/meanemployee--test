@@ -2,7 +2,7 @@ const express = require('express')
 const path = require('path')
 const app = express()
 const port = 3000
-const portAngular = 'http://localhost:4200'
+// const portAngular = 'http://localhost:4200'
 
 // Middlerwares imports
 // const morgan = require('morgan')
@@ -22,7 +22,7 @@ app.set('port', process.env.PORT || port)
 // ? Mensajes en consola
 // app.use(morgan('dev'))
 // ? Configuramos express para que entienda respuestas en formato json
-app.use(cors({origin: portAngular}))
+// app.use(cors({origin: portAngular}))
 app.use(express.json())
 
 // Routes
