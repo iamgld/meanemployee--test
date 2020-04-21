@@ -1,2 +1,2 @@
 # meanemployee--test
-Aplicación de empleados (CRUD) con Nodejs y Expressjs en el backend y Angular en el frontend
+Meanemployee is a project developed with NodeJS and MongoBD in backend and Angular in frontend
