@@ -1,9 +1,14 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
-const URI = 'mongodb://localhost/mean-employees'
+const url =
+  "mongodb+srv://gregor:tnc5jeAPAL5HRHXV@cluster0-fcyyr.mongodb.net/meanemployee?retryWrites=true&w=majority";
 
-mongoose.connect(URI)
-  .then(db => console.log('DB is connected'))
-  .catch(err => console.log(err))
+mongoose
+  .connect(url, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+  })
+  .then((db) => console.log("DB is connected"))
+  .catch((err) => console.log(err));
 
-module.exports = mongoose
+module.exports = mongoose;

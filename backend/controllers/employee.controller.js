@@ -19,12 +19,12 @@ EmployeeController.createEmployee = async (req, res) => {
     name: req.body.name,
     position: req.body.position,
     office: req.body.office,
-    salary: req.body.salary
+    salary: req.body.salary,
   });
   // El guardado en la db toma tiempo
   await employee.save();
   res.json({
-    status: "Employee Saved"
+    status: "Employee Saved",
   });
 };
 
@@ -34,11 +34,11 @@ EmployeeController.updateEmployee = async (req, res) => {
     name: req.body.name,
     position: req.body.position,
     office: req.body.office,
-    salary: req.body.salary
+    salary: req.body.salary,
   };
   await Employee.findByIdAndUpdate(id, { $set: employee }, { new: true });
   res.json({
-    status: "Employee Update"
+    status: "Employee Update",
   });
 };
 
@@ -46,7 +46,7 @@ EmployeeController.deleteEmployee = async (req, res) => {
   const { id } = req.params;
   await Employee.findByIdAndRemove(id);
   res.json({
-    status: "Employee Deleted"
+    status: "Employee Deleted",
   });
 };
 

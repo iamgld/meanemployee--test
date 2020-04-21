@@ -1,40 +1,32 @@
-const express = require('express')
-const path = require('path')
-const app = express()
-const port = 3000
-// const portAngular = 'http://localhost:4200'
+const express = require("express");
+const path = require("path");
+const app = express();
+const port = 3000;
 
 // Middlerwares imports
-// const morgan = require('morgan')
-const cors = require('cors')
-const { mongoose } = require('./database')
+const cors = require("cors");
+const { mongoose } = require("./database");
 
 // Routes imports
-const employees = require('./routes/employees.routes')
-const payment = require('./routes/payment.routes')
+const employees = require("./routes/employees.routes");
 
 // Setting
 // app.set('port', port)
 // ? Configuramos el puerto que nos ofresca el servicio en la nube
-app.set('port', process.env.PORT || port)
+app.set("port", process.env.PORT || port);
 
 // Middlerwares
-// ? Mensajes en consola
-// app.use(morgan('dev'))
-// ? Configuramos express para que entienda respuestas en formato json
-// app.use(cors({origin: portAngular}))
-app.use(express.json())
+app.use(express.json());
 
 // Routes
 // ? Configuramos las rutas del proyecto a las que daremos respuesta
-app.use('/api/employees', employees)
-app.use('/api/payment', payment)
+app.use("/api/employees", employees);
 
 // Static files
-app.use(express.static(path.join(__dirname, '../frontend/dist/frontend')))
+app.use(express.static(path.join(__dirname, "../frontend/dist/")));
 // app.get('/', (req, res) => res.send('Hello World!'))
 
 // Starting the server
-app.listen(app.get('port'), () => {
-  console.log('Server on port ' + app.get('port'))
-})
+app.listen(app.get("port"), () => {
+  console.log("Server on port " + app.get("port"));
+});
